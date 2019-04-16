@@ -152,6 +152,6 @@ func cmdBeforeBuild() []string {
 	return strings.Split(beforeCmd, ",")
 }
 func cmdAfterBuild() []string {
-	beforeCmd := settings["cmd_after_build"]
-	return strings.Split(beforeCmd, ",")
+	afterCmd := settings["cmd_after_build"]
+	return strings.Split(afterCmd, ",")
 }
