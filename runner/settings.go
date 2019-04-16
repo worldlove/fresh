@@ -32,7 +32,9 @@ var settings = map[string]string{
 	"log_color_build":   "yellow",
 	"log_color_runner":  "green",
 	"log_color_watcher": "magenta",
-	"log_color_app":     "",
+	"log_color_app":     "red",
+	"cmd_before_build":  "",
+	"cmd_after_build":   "",
 }
 
 var colors = map[string]string{
@@ -143,4 +145,13 @@ func buildDelay() time.Duration {
 	value, _ := strconv.Atoi(settings["build_delay"])
 
 	return time.Duration(value)
+}
+
+func cmdBeforeBuild() []string {
+	beforeCmd := settings["cmd_before_build"]
+	return strings.Split(beforeCmd, ",")
+}
+func cmdAfterBuild() []string {
+	beforeCmd := settings["cmd_after_build"]
+	return strings.Split(beforeCmd, ",")
 }

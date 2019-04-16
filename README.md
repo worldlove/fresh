@@ -10,7 +10,7 @@ It currently works with [Traffic](https://github.com/pilu/traffic), [Martini](ht
 
 ## Installation
 
-    go get github.com/pilu/fresh
+    go get github.com/worldlove/fresh
 
 ## Usage
 
@@ -38,14 +38,17 @@ Here is a sample config file with the default settings:
     build_log:         runner-build-errors.log
     valid_ext:         .go, .tpl, .tmpl, .html
     no_rebuild_ext:    .tpl, .tmpl, .html
-    ignored:           assets, tmp
+    ignored:           assets, tmp, logs
     build_delay:       600
     colors:            1
     log_color_main:    cyan
     log_color_build:   yellow
     log_color_runner:  green
     log_color_watcher: magenta
-    log_color_app:
+    log_color_app:     red
+    cmd_before_build:
+    cmd_after_build:
+
 
 
 ## Author
