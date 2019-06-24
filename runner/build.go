@@ -69,6 +69,9 @@ func afterBuild() {
 	case <-hasBuild:
 		{
 			for _, cmdstr := range cmdAfterBuild() {
+				if cmdstr == "" {
+					continue
+				}
 				buildLog("  AfterBuild %s", cmdstr)
 				cmdstr = strings.Trim(cmdstr, " ")
 				cmdarr := strings.Split(cmdstr, " ")

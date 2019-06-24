@@ -148,10 +148,10 @@ func buildDelay() time.Duration {
 }
 
 func cmdBeforeBuild() []string {
-	beforeCmd := settings["cmd_before_build"]
+	beforeCmd := strings.Trim(settings["cmd_before_build"], " ")
 	return strings.Split(beforeCmd, ",")
 }
 func cmdAfterBuild() []string {
-	afterCmd := settings["cmd_after_build"]
+	afterCmd := strings.Trim(settings["cmd_after_build"], " ")
 	return strings.Split(afterCmd, ",")
 }
